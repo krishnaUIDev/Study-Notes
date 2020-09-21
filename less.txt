@@ -1,0 +1,11 @@
+css pre prosesers:
+
+css preprocessors, giv ur the power to process oru css before it gets rendered to use the preprocessors we can perform the processing on the client side(using javascript) or we can perform the same on the server side(using ruby)
+
+there are three css preprocessors:
+
+1.sass(server side processor this uses ruby to run)
+2.less(client side processor this uses javascript to run this we need NODEJS)
+3.stylus(this is the least used processers)
+
+

@@ -1,0 +1,397 @@
+syntax is:
+
+<name of the element>{
+  <style>:<value>;
+}
+example:
+body{
+ color: white;
+}
+
+there are 3ways you can write a css:
+1.attribute/inline - this is given 1st priority
+2.internal - this is given the second priority
+3.external - this is given the least priority
+
+relative path :  ../10_11_32/fff.jpg
+absolute path : c://uiclass2016/uiclass/fff.jpg
+
+syntax of attribute/inline:
+style="<style>:<value>;<style>:<value>"
+
+syntact for internal and external style:
+<name of the element>{
+   <style>:<value>;
+}
+===============================================
+which is the best place to write styles?
+head
+-----------------------------------------------------
+browsers understand RGB color space (red green blue)
+
+0 - 255
+
+red: 150
+green : 150
+blue : 0
+
+border:
+border-style
+border-color
+border-image
+border-size
+border-width
+---------------------
+the convention is:
+border,style,color(2px solid #000)
+border:<border><style><color>
+----------------
+2.display:
+display is used to determine the display nature of the element.
+there are several ways to display an element:
+ 	1. inline
+	2.block
+	3.inline-block
+        4.table
+	5.flex
+	6.none
+3.we can capture the attributes of html in our css file to apply styles to that perticular elements.
+
+if there is id in html then use # in css
+
+<element>[] -> target a specific <element>
+
+every element in html has a background. the styles to background are similar to border
+
+in css the comment is /*--------------*/
+-------------------
+
+ids canbe targetted using '#' its an unique
+
+# -> id
+. -> class
+
+class attribute is used to share the same value across more than one elements/tages
+
+Box model in class:
+it creates a virtual "rectangular box" around the element which can be manipulated
+
+border-style
+border-width
+border-color
+
+border: 2px(width) solid(style) #ff0000(color)
+
+margin-left
+margin-right
+margin-top
+margin-bottom
+
+border-radius,border,padding,   margin: 5px 2px 10px 5px;
+	(top,right,bottom,left)
+standardization was introduced in css box model and we have to follow.
+margin: 50px 30px 50px 30px; this is equivalent to margin: 50px 30px;
+
+border-radius:
+
+border-top-left-radius
+border-top-right-radius
+
+if we want to get element center use margin-left:auto; margin-right:auto;
+
+in css we have certain styles to break off from the document flow(parent-child flow)
+1.float - it breaks off from the document flow and puts the element either left or in right. it doest not support vertivcal break offs.
+float: left
+float: right
+float: none
+
+2.position - it too breaks off from the document flow but it maintains its document flow
+there are several options for positions:
+	1. relative  -- this is equivalent to saying that no position is needed
+
+	2. fixed-- this fixes the element at that position regardless of document flow
+	3. absolute-- this breaks off from the document flow and can be placed both vertically and horizontally using:
+  top
+  bottom
+  left
+  right
+
+if i used fixed it fixes the element. if i use absolute we can move the elemnts using helper calsses like top bottom left and right
+
+what is the style to put two divs side by side: float left and float right.
+since div are block left elemtnts. 
+width: inherit ----- block level elemet which use all the space 
+
+
+different ways of selecting an element:
+
+1<parent> <child>
+2. nth-child
+there are several properties when we add (:) to an element in css:
+ 1.hover
+ 2.focus
+ 3.blur
+ 4.visited
+ 5.nth-child
+ 6.first-child
+
+<ul>
+   <li></li>
+   <li></li>
+</ul> 
+
+
+
+div>p  ==== selects all paragraphs
+> : select the immediate child (div>p means select the p whose child is div with class)
++ : select immidate sibling 
+
+p~ul ====== select all the ul which is come after the p 
+
+---------------------------------------------------
+::before 
+p::before{
+ content:"read this"
+}
+<p>i live in ducksbug</p>
+
+read this i live in duksbug
+---------------------------------------------------
+
+input:disbaled === disable
+input:readonly == only read
+input:invalid == 
+---------------
+backgroud-color: rgba(255,255,255,1);
+
+(a is the opasity )
+-----------------
+em -> its the unit with respectve to the font-size of the same element 
+ example: iets say i have one div with font size as 12px now if the width = 2em this means the width is 2*12 =24px
+
+ex-> we rearely use we dont see them in action these are caluculated based on the x height of the element 
+ch-> we rearely use we dont see them. these are with respective to 0 width
+ rem -> we do see them in action sometimes. these are caluculated based on the font-size of the root element. 
+example. if <html> has a style of font-size: 14px and a div has 2rem width then the width is 14*2=28px.
+vw -> this is viewport width. and its calcluated as 1% of the viewport width.
+example: lets say we have div with width of 20vm this means 20% of the width of the screen.
+
+vh-->this is viewport height and its calcluated as 1% of the viewport height.
+example: lets say we have a div with height 
+-----------------------------------------------------
+background-position-X:
+background-position-Y:
+
+if we have more then on icon then we can merge all of these icons into one single image file. In css we can use background url background position background repeat background size to pick one icon form the image and put it where needed this concept is what we call css sprites or image sprites.
+during these process, the html will load only one image insted of single icons. ths increases the performance as it has to load only once. 
+
+.backarrow,.homebtn,.firwarearriw{
+ background: url('img_nav.gif');
+width:5px;
+background-size: 318%;
+position: relative;
+top: 10px;
+background-position: -3px -1px; (x axis and y axis)    ((((css sprites)))
+}
+
+**************************************************************************************
+display:none wont even render the element. It simply removes the element from the documet flow.
+visibility: hidden makes the element invisible but keeps the dimensions intact. Meaning, there will be write space in the browser for that element location.
+**************************************************************************************
+animation in css
+
+internet explorer
+opera firefox
+chrome safari
+
+there are four major web engines. therse engines are basically the brains behind the browser.
+1.webkit - 	webkit (codename: -webkit)
+2.mozilla - 	mozilla(codename: -moz)
+3.opera    - 	opera (codename: -o)
+4.Ie        -	microsoft (codename: -ms)
+
+
+safari and chrome follow webkit engine 
+fireforx follow -moz engine
+opera follow -o engine ie follow -ms engine 
+===============================================================
+border-color: red;
+-webkit-border-color: red;
+-moz-border-color: red;
+-o-border-color: red;
+-ms-border-color: red;
+
+animations behave differently in different web engines. so we need to specify engine specific animation styles.
+--------------------------------------------------------------------------
+
+there are two types of animations
+
+1.2d
+2.3d
+
+2d animation(in css world it is called as 2d transform):
+we can perform the following actions:
+1. trasulate(moving the element in x axis or y axis)
+syntax: transform: translate(x-axis,y-axis)
+
+2, rotating( rotating in clockwise or counter clockwise direction)
+syntax: transform:rotate(+/-deg);
++ -> clockwise
+- --> anticlockwise 
+
+3. scale(increase or decrease the size of the element)
+syntax:  transform:scale(1);  (zooming the elements)
+
+
+4.skew(streaching the elements in x axis or y axis)
+syntax: transform:skew(x axis deg, y axis deg);
+
+5.matrix(if we combine all the above, we use matrix)
+syntax:  transform: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY());
+
+3d animation(in css world it is called as 5d transform):
+same actions like 2d transform apply here but we can spcify which axis to use:
+
+1. translateX, translateY, translateZ 
+2.rotateX, rotateY, rotateZ
+3. scaleX,scaleY,scaleZ
+
+translate3d(x,y,z,degree)
+rotate3d(x,y,z,degree)
+scale3d(x,y,z,degree)
+matrix3d()
+
+skew in z axis is not possible , we might not even see the element even for 0.1deg
+-----------------------------------------------------------
+opacity:0;  (disappier)
+-------------------------------------
+with ed and 3d transoforms we can only move, rotate, scale and stretch the element. but if we want to animate certain style properties, like width height opacity margin border etc,, we use css transtitions.
+
+
+css transitions:
+ we add these styles to the element style body, not in the states!
+
+-webkit-transition:<style property> <timing>
+-o-transition:<style property> <timing>
+-ms-transition:<style property> <timing>
+-mz-transition:<style property> <timing>
+
+<timing> is in seconds (s) r in milliseconds(ms)
+
+there are several types of animations:
+
+linear(straight line)
+--> liner
+
+ease(curve)--> this allows us to perform a slow start or slow end.we have 4 options here ease, ease-in, ease-Out, ease-In-Out
+
+bazier curve--> this gives us the flexibility of defining our own graphichal animation graph. this has two points within which we define our animation style.
+
+syntax: 
+cubic-bazier
+
+**coordinate values from range from 0 to 1
+
+----------------------------------------------------------
+transition delay:
+we use these to wait for certain and then apply our animation.
+syntax:
+
+-webkit-transition-delay: 2s
+-moz-transition-delay: 2s
+-o-transition-delay: 2s
+-ms-transition-delay: 2s
+transition-delay: 2s
+
+------------------------------------------------------------
+css keyframe animation
+
+this 
+syntax:
+keyframe <define the name of our animation>{
+	0%: {
+	}
+	100%:{
+	}
+}
+animation-name:<defines the time frame for our animation>;
+animation-duration: 60s:
+animation-iteration-count: 3;
+----------------------------------------------------------------
+desktop lowest resoltion is 1200*968
+tablets lowest resoltion is 1024*768
+phones lowest resoltion is 320*480
+the resolution is what we call as viewport and this viewport we consider the lowest viewport values.
+
+if our screen resolution drops below 1200, it will automatically take table's style and so on.
+
+
+
+1596-> 100%(100vw)         width of content = 100px
+1024px -> 100% (100vw)     width of content = 100px
+320px -> 100% (100vw)		width of of content =100px
+steps to follow for rwd:
+1.set the meta tag:
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+
+we divide the entire screen into 12 equal columns and we make our contents width match the width of these columns
+
+meaning if the 3 columns together make 400px then the width of the div that im placing should be 400px.
+
+meaning if the 3 columns together make 400px then the width of the div that im placing should be 400px
+
+width of one column = 100%12 = 8.33%
+width of two column = 16.67%
+width of three columns = 25%
+width of ten columns = 83.3%
+
+1600px* 8.33% = 133.33px
+1024px * 8.33% = 85.3px
+320px * 8.33% = 26.6px
+-----------------------------------------------------]
+
+box-sizing: border-box;
+--------------------------------------
+make sure that all the elements have box-sizing set to "border-box"
+we need to perform calculations and define our 12columns.create classes for each column:
+
+	.col-1,.col-2, etc.
+4. select all these columns and add float: left and some padding
+5.make sure that we add the content in row basis. that is <div class="row">
+	<div class="col-6"></div>
+	<div class="col-6"></div>
+6. since our coloumns content is float left which breaks off from the document flow we need to put these content back in the document flow to do that we say 
+
+	.row::after{
+		clear:both;
+		display:inline-block;
+-------------------------------------------------------------------media quries.
+
+	these are nothing but scfeen or media specific. if my screen size is ipas size or media is an ipad with the help of media quries, we can writes styles which will only work on ipad screen size
+
+@media only screen and (min-width:<value>) and (max-width:<value>)
+
+
+for ipads, our assumption is max width to be 768px and min width to be 660px
+
+stadard ones are:
+
+max-width, min-width, max-height, min-height, orientation, width and height 
+
+2. use of !important 
+lets say we have an inline style (attribute level style). and we want to overright that style in our .css file 
+
+to over write inline style  
+
+	}
+---------------------------------------
+div ::after{
+	content: 'this is after the element';
+}
+
+::-----> this is called as sudo elements
+----------------------------------------------
+
+
+  
+
